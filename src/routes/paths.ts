@@ -17,12 +17,21 @@ const ROOTS = {
 // ----------------------------------------------------------------------
 
 export const paths = {
+  // for divs intro
+  home: '/',
+  services: '/services',
+  team: '/team',
+  careers: '/careers',
+  blog: '/blog',
+  contact: '/contact-us',
+  about: '/about-us',
+  //
   comingSoon: '/coming-soon',
   maintenance: '/maintenance',
   pricing: '/pricing',
   payment: '/payment',
-  services: '/services',
-  contact: '/contact-us',
+
+  // services: '/services',
   faqs: '/faqs',
   page403: '/error/403',
   page404: '/error/404',
