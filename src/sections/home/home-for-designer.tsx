@@ -26,8 +26,8 @@ export default function HomeForDesigner() {
   const renderDescription = (
     <Box sx={{ textAlign: { xs: 'center', md: 'unset' }, mt: { xs: 10, md: 20 } }}>
       <m.div variants={varFade().inUp}>
-        <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-          Professional Kit
+        <Typography component="div" variant="h2" sx={{ color: 'text.primary' }}>
+          WE'VE VISITED
         </Typography>
       </m.div>
 
@@ -35,14 +35,19 @@ export default function HomeForDesigner() {
         <Typography
           variant="h2"
           sx={{
-            mt: 3,
-            mb: 5,
+            mt: 1,
+            mb: 1,
             ...textGradient(
               `300deg, ${theme.palette.primary.main} 0%, ${theme.palette.warning.main} 100%`
             ),
           }}
         >
-          For Designer
+          15 COUNTRIES
+        </Typography>
+      </m.div>
+      <m.div variants={varFade().inUp}>
+        <Typography component="div" variant="h2" sx={{ color: 'text.primary', mb: 5 }}>
+          WITH OUR LECTURES
         </Typography>
       </m.div>
 
@@ -51,12 +56,12 @@ export default function HomeForDesigner() {
           color="inherit"
           size="large"
           variant="contained"
-          endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
+          endIcon={<Iconify icon="mingcute:arrow-down-fill" />}
           target="_blank"
           rel="noopener"
-          href={paths.figma}
+          href={paths.careers}
         >
-          Figma Workspace
+          Watch some of them
         </Button>
       </m.div>
     </Box>
@@ -65,7 +70,7 @@ export default function HomeForDesigner() {
   const renderImg = (
     <Box
       component={m.img}
-      src="/assets/images/home/for_designer.webp"
+      src="https://trilon.io/_nuxt/bg-world-map-1.9380c395.png"
       variants={varFade().in}
       sx={{
         height: 1,

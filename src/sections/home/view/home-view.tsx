@@ -11,14 +11,9 @@ import ScrollProgress from 'src/components/scroll-progress';
 //
 import HomeHero from '../home-hero';
 import HomeMinimal from '../home-minimal';
-import HomePricing from '../home-pricing';
-import HomeDarkMode from '../home-dark-mode';
-import HomeLookingFor from '../home-looking-for';
 import HomeForDesigner from '../home-for-designer';
-import HomeColorPresets from '../home-color-presets';
 import HomeAdvertisement from '../home-advertisement';
-import HomeCleanInterfaces from '../home-clean-interfaces';
-import HomeHugePackElements from '../home-hugepack-elements';
+import HomeTeam from '../home-team';
 
 // ----------------------------------------------------------------------
 
@@ -66,23 +61,13 @@ export default function HomeView() {
       >
         <HomeMinimal />
 
-        <HomeHugePackElements />
+        <HomeTeam />
 
         <Box sx={{ position: 'relative' }}>
           <StyledPolygon />
           <HomeForDesigner />
-          <StyledPolygon anchor="bottom" />
+          {/* <StyledPolygon anchor="bottom" /> */}
         </Box>
-
-        <HomeDarkMode />
-
-        <HomeColorPresets />
-
-        <HomeCleanInterfaces />
-
-        <HomePricing />
-
-        <HomeLookingFor />
 
         <HomeAdvertisement />
       </Box>
