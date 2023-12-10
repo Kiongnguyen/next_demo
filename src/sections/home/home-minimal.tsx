@@ -8,25 +8,37 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // components
 import { MotionViewport, varFade } from 'src/components/animate';
+import Iconify from 'src/components/iconify';
+import { Button } from '@mui/material';
+import RouterLink from 'src/routes/components/router-link';
+import { paths } from 'src/routes/paths';
 
 // ----------------------------------------------------------------------
 
 const CARDS = [
   {
-    icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Branding',
-    description: 'Consistent design makes it easy to brand your own.',
-  },
-  {
-    icon: ' /assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    icon: 'tdesign:cooperate',
+    title: 'Consulting',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'Let us help take your Application to the next level - planning the next big steps, reviewing architecture, and brainstorming with the team to ensure you achieve your most ambitious goals!',
   },
   {
-    icon: ' /assets/icons/home/ic_development.svg',
+    icon: 'iconoir:laptop-dev-mode',
     title: 'Development',
-    description: 'Easy to customize and extend, saving you time and money.',
+    description:
+      "Trilon can become part of your development process, making sure that you're building enterprise-grade, scalable applications with best-practices in mind, all while getting things done better and faster!",
+  },
+  {
+    icon: 'fluent:people-team-32-regular',
+    title: 'Workshops',
+    description:
+      "Have a Trilon team member come to YOU! Get your team up to speed with guided workshops on a huge variety of topics. Modern NodeJS (or NestJS) development, JavaScript frameworks, Reactive Programming, or anything in between! We've got you covered.",
+  },
+  {
+    icon: 'mdi:source-branch',
+    title: 'Open-source ',
+    description:
+      'We love open-source because we love giving back to the community! We help maintain & contribute to some of the largest open-source projects, and hope to always share our knowledge with the world!',
   },
 ];
 
@@ -48,25 +60,28 @@ export default function HomeMinimal() {
         }}
       >
         <m.div variants={varFade().inUp}>
-          <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-            Minimal UI
+          <Typography component="div" variant="h1" sx={{ color: 'text.disabled' }}>
+            What we do .
           </Typography>
         </m.div>
 
         <m.div variants={varFade().inDown}>
-          <Typography variant="h2">
-            What Minimal <br /> helps you?
+          <Typography variant="h4">
+            At Trilon, our goal is to help elevate teams - giving them the push they need to truly{' '}
+            <br />
+            succeed in today's ever-changing tech world.
           </Typography>
         </m.div>
       </Stack>
 
       <Box
-        gap={{ xs: 3, lg: 10 }}
+        gap={{ xs: 3, lg: 2 }}
+        maxWidth={2000}
         display="grid"
         alignItems="center"
         gridTemplateColumns={{
           xs: 'repeat(1, 1fr)',
-          md: 'repeat(3, 1fr)',
+          md: 'repeat(4, 1fr)',
         }}
       >
         {CARDS.map((card, index) => (
@@ -74,10 +89,11 @@ export default function HomeMinimal() {
             <Card
               sx={{
                 textAlign: 'center',
+                height: '380px',
                 boxShadow: { md: 'none' },
                 bgcolor: 'background.default',
-                p: (theme) => theme.spacing(10, 5),
-                ...(index === 1 && {
+                p: (theme) => theme.spacing(2, 1),
+                ...(index % 2 === 1 && {
                   boxShadow: (theme) => ({
                     md: `-40px 40px 80px ${
                       theme.palette.mode === 'light'
@@ -88,12 +104,7 @@ export default function HomeMinimal() {
                 }),
               }}
             >
-              <Box
-                component="img"
-                src={card.icon}
-                alt={card.title}
-                sx={{ mx: 'auto', width: 48, height: 48 }}
-              />
+              <Iconify icon={card.icon} width={40} sx={{ color: 'primary' }} />
 
               <Typography variant="h5" sx={{ mt: 8, mb: 2 }}>
                 {card.title}
@@ -104,6 +115,25 @@ export default function HomeMinimal() {
           </m.div>
         ))}
       </Box>
+      <Stack
+        sx={{
+          textAlign: 'center',
+          alignItems: 'center',
+          mb: { xs: 5, md: 10 },
+        }}
+      >
+        <Button
+          component={RouterLink}
+          href={paths.services}
+          color="inherit"
+          size="large"
+          variant="outlined"
+          endIcon={<Iconify icon="mingcute:arow-to-right-line" width={24} />}
+          sx={{ width: '200px', mt: '20px' }}
+        >
+          Explore more
+        </Button>
+      </Stack>
     </Container>
   );
 }
